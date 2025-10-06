@@ -1,0 +1,16 @@
+# Redirects for FlowMetrics Analytics SaaS Landing Page
+
+# Handle all routes by serving index.html (SPA routing)
+/*    /index.html   200
+
+# API redirects (placeholder for future backend integration)
+/api/*  https://api.flowmetrics.com/:splat   200
+
+# Legacy redirects (if needed)
+/old-path    /new-path    301
+
+# Security headers (alternative to netlify.toml)
+/*  X-Frame-Options: DENY
+/*  X-XSS-Protection: 1; mode=block
+/*  X-Content-Type-Options: nosniff
+/*  Referrer-Policy: strict-origin-when-cross-origin
