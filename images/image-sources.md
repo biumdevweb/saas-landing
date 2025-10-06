@@ -39,55 +39,61 @@ Questo documento documenta tutte le immagini utilizzate nella landing page SaaS 
 - **Licenza**: Copyright FlowMetrics Analytics
 - **Descrizione**: Logo FlowMetrics semplificato
 
-## 🏢 Client Logos
+## 🏢 Client Logos (Aziende Reali)
 
-### 1. TechCorp
+### 1. IBM
 - **File**: `logo1.png`
 - **Dimensioni**: 200x80px
-- **Formato**: PNG con trasparenza
-- **Fonte**: Logo creato con Figma
-- **Licenza**: Copyright FlowMetrics Analytics (uso fittizio)
-- **Settore**: Technology/Software
+- **Formato**: PNG
+- **Fonte**: Wikimedia Commons
+- **Licenza**: Logo IBM (uso per demo purposes)
+- **Settore**: Technology/Enterprise Solutions
+- **URL**: https://commons.wikimedia.org/wiki/File:IBM_logo.svg
 
-### 2. DataFlow
+### 2. Amazon Web Services (AWS)
 - **File**: `logo2.png`
 - **Dimensioni**: 200x80px
-- **Formato**: PNG con trasparenza
-- **Fonte**: Logo creato con Figma
-- **Licenza**: Copyright FlowMetrics Analytics (uso fittizio)
-- **Settore**: Data Analytics
+- **Formato**: PNG
+- **Fonte**: Wikimedia Commons
+- **Licenza**: Logo AWS (uso per demo purposes)
+- **Settore**: Cloud Services/Infrastructure
+- **URL**: https://commons.wikimedia.org/wiki/File:Amazon_Web_Services_Logo.svg
 
-### 3. CloudBase
+### 3. Google
 - **File**: `logo3.png`
 - **Dimensioni**: 200x80px
-- **Formato**: PNG con trasparenza
-- **Fonte**: Logo creato con Figma
-- **Licenza**: Copyright FlowMetrics Analytics (uso fittizio)
-- **Settore**: Cloud Services
+- **Formato**: PNG
+- **Fonte**: Wikimedia Commons
+- **Licenza**: Logo Google (uso per demo purposes)
+- **Settore**: Technology/Search/Cloud
+- **URL**: https://commons.wikimedia.org/wiki/File:Google_2015_logo.svg
 
-### 4. InsightPro
+### 4. Microsoft
 - **File**: `logo4.png`
 - **Dimensioni**: 200x80px
-- **Formato**: PNG con trasparenza
-- **Fonte**: Logo creato con Figma
-- **Licenza**: Copyright FlowMetrics Analytics (uso fittizio)
-- **Settore**: Business Intelligence
+- **Formato**: PNG
+- **Fonte**: Wikimedia Commons
+- **Licenza**: Logo Microsoft (uso per demo purposes)
+- **Settore**: Technology/Software/Cloud
+- **URL**: https://commons.wikimedia.org/wiki/File:Microsoft_logo.svg
 
-### 5. Metrica
+### 5. Salesforce
 - **File**: `logo5.png`
 - **Dimensioni**: 200x80px
-- **Formato**: PNG con trasparenza
-- **Fonte**: Logo creato con Figma
-- **Licenza**: Copyright FlowMetrics Analytics (uso fittizio)
-- **Settore**: Metrics Platform
+- **Formato**: PNG
+- **Fonte**: Wikimedia Commons
+- **Licenza**: Logo Salesforce (uso per demo purposes)
+- **Settore**: CRM/Cloud Services
+- **URL**: https://commons.wikimedia.org/wiki/File:Salesforce_logo.svg
 
-### 6. AnalyticsHub
+### 6. Slack
 - **File**: `logo6.png`
 - **Dimensioni**: 200x80px
-- **Formato**: PNG con trasparenza
-- **Fonte**: Logo creato con Figma
-- **Licenza**: Copyright FlowMetrics Analytics (uso fittizio)
-- **Settore**: Dashboard Tool
+- **Formato**: PNG
+- **Fonte**: Wikimedia Commons
+- **Licenza**: Logo Slack (uso per demo purposes)
+- **Settore**: Communication/Collaboration
+- **URL**: https://commons.wikimedia.org/wiki/File:Slack_icon.svg
 
 ## 📋 **Immagini Necessarie - Configurazione Dashboard CSS Puro**
 
@@ -95,12 +101,12 @@ Questo documento documenta tutte le immagini utilizzate nella landing page SaaS 
 1. `images/hero-dashboard.jpg` - Hero section e Open Graph (riga 9 HTML)
 2. `images/favicon.ico` - Browser favicon (riga 28 HTML)
 3. `images/testimonial-avatar.jpg` - Testimonial avatar (riga 232 HTML)
-4. `images/client-logos/logo1.png` - Client logo TechCorp (righe 109, 242 HTML)
-5. `images/client-logos/logo2.png` - Client logo DataFlow (righe 110, 243 HTML)
-6. `images/client-logos/logo3.png` - Client logo CloudBase (righe 111, 244 HTML)
-7. `images/client-logos/logo4.png` - Client logo InsightPro (righe 112, 245 HTML)
-8. `images/client-logos/logo5.png` - Client logo Metrica (riga 246 HTML)
-9. `images/client-logos/logo6.png` - Client logo AnalyticsHub (riga 247 HTML)
+4. `images/client-logos/logo1.png` - Client logo IBM (righe 109, 242 HTML)
+5. `images/client-logos/logo2.png` - Client logo Amazon Web Services (righe 110, 243 HTML)
+6. `images/client-logos/logo3.png` - Client logo Google (righe 111, 244 HTML)
+7. `images/client-logos/logo4.png` - Client logo Microsoft (righe 112, 245 HTML)
+8. `images/client-logos/logo5.png` - Client logo Salesforce (riga 246 HTML)
+9. `images/client-logos/logo6.png` - Client logo Slack (riga 247 HTML)
 
 ### **Immagini NON Necessarie**
 1. ~~`images/dashboard-mockup.jpg`~~ - Sostituito da dashboard CSS puro
@@ -108,9 +114,9 @@ Questo documento documenta tutte le immagini utilizzate nella landing page SaaS 
 ### **Mappatura Sezioni → Immagini**
 | Sezione HTML | Immagini Necessarie | Riferimento |
 |--------------|---------------------|-------------|
-| Hero (righe 83-116) | hero-dashboard.jpg, logo1-4.png | Righe 9, 109-112 |
+| Hero (righe 83-116) | hero-dashboard.jpg, logo1-4.png (IBM, AWS, Google, Microsoft) | Righe 9, 109-112 |
 | Demo (righe 157-221) | **NESSUNA** (CSS puro) | Dashboard CSS |
-| Social Proof (righe 223-266) | testimonial-avatar.jpg, logo1-6.png | Righe 232, 242-247 |
+| Social Proof (righe 223-266) | testimonial-avatar.jpg, logo1-6.png (IBM, AWS, Google, Microsoft, Salesforce, Slack) | Righe 232, 242-247 |
 | Head (righe 1-46) | favicon.ico, hero-dashboard.jpg | Righe 9, 28 |
 
 ---
