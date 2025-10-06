@@ -264,12 +264,6 @@ p {
 /* Hero Section */
 .hero {
   height: 100vh;
-  background-image:
-    linear-gradient(135deg, rgba(0, 86, 179, 0.7) 0%, rgba(0, 128, 128, 0.7) 100%),
-    url('../images/hero-dashboard.jpg');
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
   position: relative;
   display: flex;
   align-items: center;
@@ -277,6 +271,66 @@ p {
   text-align: center;
   color: var(--bg-primary);
   overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../images/hero-dashboard.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  z-index: -2;
+  transform: scale(1.03);
+  transition: filter 1.2s ease-out, transform 1.2s ease-out;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.2) 100%);
+  z-index: -1;
+}
+
+.hero-content {
+  z-index: 1;
+  position: relative;
+}
+
+.hero.blue-tint::before {
+  filter: sepia(100%) hue-rotate(200deg) saturate(120%) brightness(0.8);
+}
+
+.hero-content {
+  z-index: 10;
+  transition: none;
+}
+
+.hero-title,
+.hero-subtitle,
+.metric-number,
+.metric-label,
+.cta-microcopy,
+.hero-social-proof p {
+  transition: none;
+}
+
+.client-logos img {
+  transition: none;
+}
+
+.cta-button.primary {
+  transition: none;
+}
+
+.hero::before {
+  transition: filter 1.5s ease-out;
 }
 
 .hero-overlay {
@@ -593,11 +647,14 @@ p {
   height: 40px;
   margin: 0 auto;
   opacity: 0.7;
-  transition: opacity var(--transition-normal);
+  filter: brightness(1.2);
+  transition: opacity var(--transition-normal), filter var(--transition-normal), transform var(--transition-normal);
 }
 
 .client-logos-grid img:hover {
   opacity: 1;
+  filter: brightness(1) contrast(1.1);
+  transform: scale(1.05);
 }
 
 .stats-grid {

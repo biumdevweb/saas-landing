@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initScrollEffects();
     initLazyLoading();
     initInteractiveDashboard();
+    initHeroDesaturation();
 });
 
 // Mobile Navigation Menu
@@ -430,3 +431,70 @@ style.textContent = `
     }
 `;
 document.head.appendChild(style);
+
+// Hero Gradual Desaturation Effect
+function initHeroDesaturation() {
+    const heroBg = document.querySelector('.hero-bg');
+    const heroContent = document.querySelector('.hero-content');
+    
+    if (heroBg && heroContent) {
+        console.log('Hero effect initialized'); // Debug log
+        
+        // Get the center position of hero content
+        function getContentCenter() {
+            const rect = heroContent.getBoundingClientRect();
+            return {
+                x: rect.left + rect.width / 2,
+                y: rect.top + rect.height / 2
+            };
+        }
+        
+        // Calculate distance from mouse to content center
+        function calculateDistance(mouseX, mouseY) {
+            const center = getContentCenter();
+            const dx = mouseX - center.x;
+            const dy = mouseY - center.y;
+            return Math.sqrt(dx * dx + dy * dy);
+        }
+        
+        // Apply effect based on distance with smooth easing
+        function applyEffect(distance) {
+            const maxDistance = 400; // Maximum distance for effect
+            const rawIntensity = Math.max(0, Math.min(1, 1 - (distance / maxDistance)));
+            
+            // Apply smooth easing function (ease-out cubic)
+            const intensity = 1 - Math.pow(1 - rawIntensity, 3);
+            
+            // Apply only desaturation to background (100% max)
+            const desaturationLevel = intensity * 1.0; // Max 100% desaturation
+            const filterValue = intensity > 0.05
+                ? `grayscale(${desaturationLevel})`
+                : 'none';
+            
+            // Apply zoom-out effect (returning to normal from initial 3% zoom-in)
+            const scale = 1.03 - (intensity * 0.03); // From 1.03 to 1.0 (3% zoom-out)
+            const transformValue = `scale(${scale})`;
+            
+            heroBg.style.filter = filterValue;
+            heroBg.style.transform = transformValue;
+        }
+        
+        // Mouse move handler with throttling for performance
+        let ticking = false;
+        document.addEventListener('mousemove', function(e) {
+            if (!ticking) {
+                requestAnimationFrame(function() {
+                    const distance = calculateDistance(e.clientX, e.clientY);
+                    applyEffect(distance);
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        });
+        
+        // Initial state - no filter applied
+        heroBg.style.filter = 'none';
+    } else {
+        console.log('Hero background or content not found'); // Debug log
+    }
+}
