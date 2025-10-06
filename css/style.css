@@ -373,7 +373,12 @@ p {
 
 .client-logos img {
   height: 30px;
-  filter: brightness(0) invert(1);
+  opacity: 0.8;
+  transition: opacity var(--transition-normal);
+}
+
+.client-logos img:hover {
+  opacity: 1;
 }
 
 /* Benefits Section */
