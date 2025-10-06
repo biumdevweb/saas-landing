@@ -71,7 +71,7 @@ Questo documento documenta tutte le immagini utilizzate nella landing page SaaS 
 ### 4. Microsoft
 - **File**: `logo4.png`
 - **Dimensioni**: 200x80px
-- **Formato**: PNG
+- **Formato**: PNG (versione a colori)
 - **Fonte**: Wikimedia Commons
 - **Licenza**: Logo Microsoft (uso per demo purposes)
 - **Settore**: Technology/Software/Cloud
@@ -80,20 +80,20 @@ Questo documento documenta tutte le immagini utilizzate nella landing page SaaS 
 ### 5. Salesforce
 - **File**: `logo5.png`
 - **Dimensioni**: 200x80px
-- **Formato**: PNG
+- **Formato**: PNG (versione a colori)
 - **Fonte**: Wikimedia Commons
 - **Licenza**: Logo Salesforce (uso per demo purposes)
 - **Settore**: CRM/Cloud Services
-- **URL**: https://commons.wikimedia.org/wiki/File:Salesforce_logo.svg
+- **URL**: https://commons.wikimedia.org/wiki/File:Salesforce.com_logo.svg
 
 ### 6. Slack
 - **File**: `logo6.png`
 - **Dimensioni**: 200x80px
-- **Formato**: PNG
+- **Formato**: PNG (versione a colori)
 - **Fonte**: Wikimedia Commons
 - **Licenza**: Logo Slack (uso per demo purposes)
 - **Settore**: Communication/Collaboration
-- **URL**: https://commons.wikimedia.org/wiki/File:Slack_icon.svg
+- **URL**: https://commons.wikimedia.org/wiki/File:Slack_icon_2019.svg
 
 ## 📋 **Immagini Necessarie - Configurazione Dashboard CSS Puro**
 
