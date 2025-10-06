@@ -15,14 +15,12 @@ Questo documento documenta tutte le immagini utilizzate nella landing page SaaS 
 - **Descrizione**: Dashboard analytics con gradient background
 - **Ottimizzazione**: Compressa per web, qualità 85%
 
-### 2. Dashboard Mockup
-- **File**: `dashboard-mockup.jpg`
-- **Dimensioni**: 1200x800px
-- **Formato**: JPG (con fallback WebP)
-- **Fonte**: Mockup creato con Figma
-- **Licenza**: Copyright FlowMetrics Analytics
-- **Descrizione**: Interface mockup del prodotto FlowMetrics
-- **Ottimizzazione**: Compressa per web, qualità 90%
+### 2. ~~Dashboard Mockup~~ (NON NECESSARIO)
+- **File**: ~~`dashboard-mockup.jpg`~~
+- **Stato**: **SOSTITUITO DA CSS PURO**
+- **Motivo**: La dashboard è ora implementata con CSS puro per immediate visibility
+- **Riferimento**: `LIGHTWEIGHT_DASHBOARD.md`
+- **Note**: Rimuovere dalle immagini da generare
 
 ### 3. Testimonial Avatar
 - **File**: `testimonial-avatar.jpg`
@@ -90,6 +88,32 @@ Questo documento documenta tutte le immagini utilizzate nella landing page SaaS 
 - **Fonte**: Logo creato con Figma
 - **Licenza**: Copyright FlowMetrics Analytics (uso fittizio)
 - **Settore**: Dashboard Tool
+
+## 📋 **Immagini Necessarie - Configurazione Dashboard CSS Puro**
+
+### **Immagini Obbligatorie (9 totali)**
+1. `images/hero-dashboard.jpg` - Hero section e Open Graph (riga 9 HTML)
+2. `images/favicon.ico` - Browser favicon (riga 28 HTML)
+3. `images/testimonial-avatar.jpg` - Testimonial avatar (riga 232 HTML)
+4. `images/client-logos/logo1.png` - Client logo TechCorp (righe 109, 242 HTML)
+5. `images/client-logos/logo2.png` - Client logo DataFlow (righe 110, 243 HTML)
+6. `images/client-logos/logo3.png` - Client logo CloudBase (righe 111, 244 HTML)
+7. `images/client-logos/logo4.png` - Client logo InsightPro (righe 112, 245 HTML)
+8. `images/client-logos/logo5.png` - Client logo Metrica (riga 246 HTML)
+9. `images/client-logos/logo6.png` - Client logo AnalyticsHub (riga 247 HTML)
+
+### **Immagini NON Necessarie**
+1. ~~`images/dashboard-mockup.jpg`~~ - Sostituito da dashboard CSS puro
+
+### **Mappatura Sezioni → Immagini**
+| Sezione HTML | Immagini Necessarie | Riferimento |
+|--------------|---------------------|-------------|
+| Hero (righe 83-116) | hero-dashboard.jpg, logo1-4.png | Righe 9, 109-112 |
+| Demo (righe 157-221) | **NESSUNA** (CSS puro) | Dashboard CSS |
+| Social Proof (righe 223-266) | testimonial-avatar.jpg, logo1-6.png | Righe 232, 242-247 |
+| Head (righe 1-46) | favicon.ico, hero-dashboard.jpg | Righe 9, 28 |
+
+---
 
 ## 📊 Specifiche Tecniche
 
@@ -186,6 +210,7 @@ img[loading="lazy"] {
 
 ---
 
-**Data Aggiornamento**: 6 Ottobre 2025  
-**Versione**: 1.0.0  
+**Data Aggiornamento**: 6 Ottobre 2025 (v2.0)
+**Versione**: 2.0.0 (Dashboard CSS Puro)
 **Responsabile**: Development Team
+**Cambiamenti**: Sostituito dashboard-mockup.jpg con dashboard CSS puro per immediate visibility
