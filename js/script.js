@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initModal();
     initScrollEffects();
     initLazyLoading();
+    initInteractiveDashboard();
 });
 
 // Mobile Navigation Menu
@@ -352,6 +353,58 @@ function throttle(func, limit) {
             setTimeout(() => inThrottle = false, limit);
         }
     };
+}
+
+// Lightweight Interactive Dashboard Functionality
+function initInteractiveDashboard() {
+    // Simple number animation for metrics
+    function animateNumbers() {
+        const metricNumbers = document.querySelectorAll('.metric-number[data-target]');
+        
+        metricNumbers.forEach(element => {
+            const target = parseInt(element.dataset.target);
+            const duration = 2000;
+            const increment = target / (duration / 16);
+            let current = 0;
+            
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    current = target;
+                    clearInterval(timer);
+                }
+                element.textContent = Math.floor(current).toLocaleString('it-IT');
+            }, 16);
+        });
+    }
+    
+    // Simple tab switching
+    function initTabSwitching() {
+        const tabs = document.querySelectorAll('.dashboard-tab');
+        
+        tabs.forEach(tab => {
+            tab.addEventListener('click', function() {
+                tabs.forEach(t => t.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+    }
+    
+    // Initialize dashboard when visible
+    const dashboard = document.querySelector('.dashboard-css-pure');
+    if (dashboard) {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateNumbers();
+                    initTabSwitching();
+                    observer.unobserve(entry.target);
+                }
+            });
+        });
+        
+        observer.observe(dashboard);
+    }
 }
 
 // Add CSS class for animations

@@ -1307,6 +1307,164 @@ p {
   }
 }
 
+/* Pure CSS Dashboard - Lightweight & Immediate */
+.dashboard-css-pure {
+    max-width: 600px;
+    margin: 0 auto;
+    background: linear-gradient(135deg, #0056b3, #008080);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
+    box-shadow: var(--shadow-xl);
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Dashboard Header */
+.dashboard-header {
+    margin-bottom: var(--spacing-md);
+}
+
+.dashboard-tabs {
+    display: flex;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-md);
+}
+
+.dashboard-tab {
+    padding: var(--spacing-xs) var(--spacing-sm);
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-sm);
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all var(--transition-normal);
+}
+
+.dashboard-tab:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.dashboard-tab.active {
+    background-color: var(--accent-color);
+    color: var(--bg-primary);
+}
+
+/* Dashboard Metrics */
+.dashboard-metrics {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+}
+
+.metric-card {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-md);
+    text-align: center;
+    backdrop-filter: blur(5px);
+    transition: all var(--transition-normal);
+}
+
+.metric-card:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-5px);
+}
+
+.metric-number {
+    font-size: 1.5rem;
+    font-weight: 700;
+    font-family: var(--font-heading);
+    margin-bottom: var(--spacing-xs);
+}
+
+.metric-label {
+    font-size: 0.875rem;
+    opacity: 0.8;
+}
+
+/* Dashboard Charts */
+.dashboard-charts {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+}
+
+.chart-container {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-md);
+    backdrop-filter: blur(5px);
+}
+
+.chart-title {
+    font-size: 0.875rem;
+    margin-bottom: var(--spacing-sm);
+    opacity: 0.8;
+}
+
+.chart-bar-container {
+    height: 8px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    margin-bottom: var(--spacing-xs);
+    overflow: hidden;
+}
+
+.chart-bar {
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent-color), #FF8C00);
+    border-radius: 4px;
+    width: 0;
+    animation: growBar 2s ease-out forwards;
+}
+
+.chart-value {
+    font-size: 1.125rem;
+    font-weight: 600;
+}
+
+@keyframes growBar {
+    to {
+        width: var(--bar-width);
+    }
+}
+
+/* Dashboard CTA */
+.dashboard-cta {
+    text-align: center;
+    margin-top: var(--spacing-md);
+}
+
+.demo-cta-button {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: var(--bg-primary);
+    font-weight: 600;
+    padding: var(--spacing-sm) var(--spacing-lg);
+    border-radius: var(--radius-md);
+    text-decoration: none;
+    transition: all var(--transition-normal);
+    box-shadow: var(--shadow-md);
+}
+
+.demo-cta-button:hover {
+    background-color: var(--primary-color);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* Set chart bar widths dynamically */
+.chart-bar[data-percent="75"] {
+    --bar-width: 75%;
+}
+
+.chart-bar[data-percent="92"] {
+    --bar-width: 92%;
+}
+
 @media (max-width: 480px) {
   .container {
     padding: 0 var(--spacing-sm);
