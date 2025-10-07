@@ -170,6 +170,7 @@ p {
 .cta-button.secondary:hover {
   background-color: var(--primary-color);
   color: var(--bg-primary);
+  box-shadow: 0 0 10px rgba(0, 86, 179, 0.3); /* Aggiunto effetto glow premium */
 }
 
 .secondary-button {
@@ -437,8 +438,11 @@ p {
 
 /* Benefits Section */
 .benefits {
-  padding: var(--spacing-3xl) 0;
-  background-color: var(--bg-secondary);
+  padding: 5rem 0; /* 80px - Padding differenziato per ritmo visivo */
+  background:
+    radial-gradient(circle at 20% 30%, rgba(0, 86, 179, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(0, 128, 128, 0.03) 0%, transparent 50%),
+    linear-gradient(180deg, #F8FAFC 0%, #F0F4F8 100%); /* Gradiente con micro-pattern radiali */
 }
 
 .benefits-grid {
@@ -454,11 +458,29 @@ p {
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-md);
   transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+  position: relative;
+  overflow: hidden;
+}
+
+.benefit-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(0, 86, 179, 0.1), transparent);
+  opacity: 0;
+  transition: opacity var(--transition-normal);
 }
 
 .benefit-item:hover {
   transform: translateY(-5px);
   box-shadow: var(--shadow-lg);
+}
+
+.benefit-item:hover::before {
+  opacity: 1;
 }
 
 .benefit-icon {
@@ -485,8 +507,11 @@ p {
 
 /* Demo Section */
 .demo {
-  padding: var(--spacing-3xl) 0;
-  background-color: var(--bg-primary);
+  padding: 6.25rem 0; /* 100px - Maggiore respiro per sezione importante */
+  background:
+    radial-gradient(circle at 30% 20%, rgba(0, 86, 179, 0.02) 0%, transparent 50%),
+    radial-gradient(circle at 70% 80%, rgba(0, 128, 128, 0.02) 0%, transparent 50%),
+    linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 50%, #F5F8FB 100%);
 }
 
 .demo-content {
@@ -572,7 +597,10 @@ p {
 /* Social Proof Section */
 .social-proof {
   padding: var(--spacing-3xl) 0;
-  background-color: var(--bg-secondary);
+  background:
+    radial-gradient(ellipse at 40% 20%, rgba(0, 86, 179, 0.04) 0%, transparent 70%),
+    radial-gradient(ellipse at 60% 80%, rgba(0, 128, 128, 0.04) 0%, transparent 70%),
+    linear-gradient(180deg, #F0F7FF 0%, #E6F3FF 50%, #F0F7FF 100%); /* Gradiente con micro-pattern ellittici */
 }
 
 .social-proof-content {
@@ -646,9 +674,9 @@ p {
 .client-logos-grid img {
   height: 40px;
   margin: 0 auto;
-  opacity: 0.7;
-  filter: brightness(1.2);
-  transition: opacity var(--transition-normal), filter var(--transition-normal), transform var(--transition-normal);
+  opacity: 0.8; /* Migliorato da 0.7 a 0.8 per maggiore visibilità */
+  filter: brightness(1.1);
+  transition: all 0.3s ease; /* Transizione migliorata per effetto più smooth */
 }
 
 .client-logos-grid img:hover {
@@ -680,7 +708,10 @@ p {
 /* Features Section */
 .features {
   padding: var(--spacing-3xl) 0;
-  background-color: var(--bg-primary);
+  background:
+    radial-gradient(circle at 25% 25%, rgba(0, 86, 179, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, rgba(0, 128, 128, 0.03) 0%, transparent 50%),
+    linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 50%, #F0F4F8 100%);
 }
 
 .features h2 {
@@ -698,13 +729,35 @@ p {
 .feature-item {
   text-align: center;
   padding: var(--spacing-lg);
-  background-color: var(--bg-secondary);
+  background-color: var(--bg-primary);
   border-radius: var(--radius-lg);
+  transition: transform var(--transition-normal);
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  border: 1px solid rgba(0, 86, 179, 0.1);
+}
+
+.feature-item::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--secondary-color), var(--primary-color));
+  transform: scaleX(0);
+  transform-origin: left;
   transition: transform var(--transition-normal);
 }
 
 .feature-item:hover {
   transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+.feature-item:hover::after {
+  transform: scaleX(1);
 }
 
 .feature-icon {
@@ -731,8 +784,31 @@ p {
 
 /* Pricing Section */
 .pricing {
-  padding: var(--spacing-3xl) 0;
-  background-color: var(--bg-secondary);
+  padding: 6.25rem 0; /* 100px - Spazio adeguato per sezione critica */
+  background:
+    radial-gradient(circle at 20% 30%, rgba(0, 86, 179, 0.03) 0%, transparent 60%),
+    radial-gradient(circle at 80% 70%, rgba(0, 128, 128, 0.03) 0%, transparent 60%),
+    linear-gradient(135deg, #F5F9FF 0%, #EBF4FF 50%, #E1EEFF 100%); /* Gradiente più azzurrato per distinguersi da Features */
+  position: relative;
+}
+
+.pricing::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image:
+    radial-gradient(circle at 30% 40%, rgba(0, 128, 128, 0.05) 0%, transparent 70%),
+    radial-gradient(circle at 70% 60%, rgba(255, 165, 0, 0.03) 0%, transparent 70%),
+    radial-gradient(circle at 80% 30%, rgba(0, 86, 179, 0.04) 0%, transparent 60%); /* Radiali più intense per maggiore distinzione */
+  z-index: 0;
+}
+
+.pricing .container {
+  position: relative;
+  z-index: 1;
 }
 
 .pricing h2 {
@@ -805,9 +881,10 @@ p {
 
 .pricing-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: var(--spacing-xl);
   margin-bottom: var(--spacing-2xl);
+  align-items: stretch; /* Assicura che tutte le card abbiano la stessa altezza */
 }
 
 .pricing-card {
@@ -817,6 +894,23 @@ p {
   box-shadow: var(--shadow-md);
   position: relative;
   transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.pricing-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(0, 86, 179, 0.05) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity var(--transition-normal);
+  pointer-events: none;
 }
 
 .pricing-card:hover {
@@ -824,9 +918,31 @@ p {
   box-shadow: var(--shadow-lg);
 }
 
+.pricing-card:hover::before {
+  opacity: 1;
+}
+
 .pricing-card.popular {
   border: 2px solid var(--secondary-color);
-  transform: scale(1.05);
+  transform: scale(1.08);
+  margin-top: -20px; /* Spazio extra per il badge */
+  padding: calc(var(--spacing-xl) + 20px) var(--spacing-xl) var(--spacing-xl); /* Padding extra in alto */
+  position: relative;
+  overflow: visible; /* Permette al badge di essere visibile fuori dalla card */
+  box-shadow: var(--shadow-xl), 0 0 20px rgba(0, 128, 128, 0.15); /* Ombra più prominente */
+  height: calc(100% + 40px); /* Altezza extra per essere più grande */
+}
+
+.pricing-card.popular::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 2px;
+  background-color: var(--bg-primary);
+  z-index: 5;
 }
 
 .popular-badge {
@@ -840,11 +956,14 @@ p {
   font-weight: 600;
   padding: 4px 12px;
   border-radius: var(--radius-md);
+  z-index: 10;
+  box-shadow: var(--shadow-sm);
 }
 
 .pricing-header {
   text-align: center;
   margin-bottom: var(--spacing-lg);
+  flex-grow: 0;
 }
 
 .pricing-header h3 {
@@ -877,8 +996,9 @@ p {
   color: var(--text-secondary);
 }
 
-.pricing-features ul {
+.pricing-features {
   margin-bottom: var(--spacing-lg);
+  flex-grow: 1; /* Fa espandere la sezione features per riempire lo spazio */
 }
 
 .pricing-features li {
@@ -903,6 +1023,8 @@ p {
 
 .pricing-cta {
   text-align: center;
+  margin-top: auto; /* Spinge il pulsante verso il basso */
+  padding-top: var(--spacing-md);
 }
 
 .pricing-guarantee {
@@ -921,12 +1043,25 @@ p {
 
 .guarantee-item svg {
   color: var(--accent-color);
+  flex-shrink: 0; /* Impedisce all'icona di ridursi */
+  width: 24px;
+  height: 24px;
+}
+
+.guarantee-item p {
+  margin: 0;
+  line-height: 1.4; /* Allinea verticalmente il testo con l'icona */
+  display: flex;
+  align-items: center;
 }
 
 /* FAQ Section */
 .faq {
   padding: var(--spacing-3xl) 0;
-  background-color: var(--bg-primary);
+  background:
+    radial-gradient(ellipse at 50% 30%, rgba(0, 86, 179, 0.03) 0%, transparent 60%),
+    radial-gradient(ellipse at 50% 70%, rgba(0, 128, 128, 0.03) 0%, transparent 60%),
+    linear-gradient(180deg, #F8FAFC 0%, #F0F4F8 100%); /* Gradiente con micro-pattern ellittici */
 }
 
 .faq h2 {
@@ -1359,8 +1494,16 @@ p {
     gap: var(--spacing-sm);
   }
   
+  .pricing-grid {
+    grid-template-columns: 1fr; /* Una colonna su mobile */
+    gap: var(--spacing-lg);
+  }
+  
   .pricing-card.popular {
     transform: scale(1);
+    margin-top: 0; /* Reset margin su mobile */
+    padding: var(--spacing-xl); /* Reset padding su mobile */
+    height: auto; /* Reset height su mobile */
   }
   
   .pricing-guarantee {
@@ -1376,10 +1519,16 @@ p {
     background: linear-gradient(135deg, #0056b3, #008080);
     border-radius: var(--radius-lg);
     padding: var(--spacing-lg);
-    box-shadow: var(--shadow-xl);
+    box-shadow: var(--shadow-xl); /* Ombra standard senza glow eccessivo */
     color: white;
     position: relative;
     overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Bordo sottile invece che spesso */
+    transition: box-shadow var(--transition-normal);
+}
+
+.dashboard-css-pure:hover {
+    box-shadow: var(--shadow-xl), 0 5px 15px rgba(0, 86, 179, 0.2); /* Effetto hover più sottile */
 }
 
 /* Dashboard Header */
